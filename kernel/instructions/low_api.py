@@ -6,8 +6,6 @@ class LowAPI:
         self.class_space = class_space
 
     def init_method_space(self):  # Инициализация списка методов
-        index = 0
-
         for name_class, this_class in self.class_space.items():  # Перебираем классы
             method_list = []
 
@@ -32,8 +30,6 @@ class LowAPI:
                     method_object()
                 elif method == "run_hapi":
                     self.hapi_method = method_object
-
-            index += 1
 
         # Только один метод с именем run_hapi может работать с пользователем
         if self.hapi_method:

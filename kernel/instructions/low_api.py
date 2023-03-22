@@ -41,7 +41,7 @@ class LowAPI:
             method_list.append(method)
         return method_list
 
-    def method_call(self, method, args):
+    def method_call(self, method, args):  # Вызовы функций других плагин
         try:
             if args:
                 return self.method_space[method](*args)
@@ -50,3 +50,9 @@ class LowAPI:
             return "this method does not exist"
         except TypeError:
             return "invalid arguments"
+
+    def get_method(self, method_name):  # Возвращает ссылку на метод
+        try:
+            return self.method_space[method_name]
+        except KeyError:
+            return None

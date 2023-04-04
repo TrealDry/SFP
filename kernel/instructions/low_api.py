@@ -55,4 +55,4 @@ class LowAPI:
         try:
             return self.method_space[method_name]
         except KeyError:
-            return None
+            return "this method does not exist"

@@ -2,6 +2,7 @@ import os
 import sys
 import importlib
 import importlib.util
+from os.path import join
 
 
 class PluginLoader:
@@ -9,8 +10,8 @@ class PluginLoader:
     def __init__(self):
         self.class_space = {}  # Ссылки на классы
         self.plugin_path = [
-            ".\\kernel\\official_plugins",
-            ".\\plugins",
+            join(".", "kernel", "official_plugins"),
+            join(".", "plugins")
         ]
 
     @staticmethod
